@@ -1,4 +1,4 @@
-package com.example.Microservices.user;
+package com.example.Microservices.jpaResource;
 
 import java.util.Date;
 

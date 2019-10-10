@@ -1,25 +1,23 @@
-package com.example.Microservices.user;
+package com.example.Microservices.filtering;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-@Entity
+@JsonFilter("UserFilter")
 public class User {
 	
-	@Id
-	@GeneratedValue
 	private Integer id;
 	
 	@Size(min=2,message="Name should have atleast 2 character")
 	private String name;
 	
 	@Past
+	@JsonIgnore
 	private Date birthDate;
 	
 	public User() {}
